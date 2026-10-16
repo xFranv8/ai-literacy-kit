@@ -2,59 +2,259 @@
 <html lang="es">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Alfabetización en IA para tu equipo · AI literacy for your team (AI Act art. 4)</title>
-<meta name="description" content="Formación por rol, registro de herramientas de IA y pack de evidencias para pymes. Art. 4 AI Act.">
+<title>AI Literacy Kit · Alfabetización en IA para pymes (AI Act art. 4)</title>
+<meta name="description" content="Formación por rol, registro de herramientas de IA y pack de evidencias para pymes de la UE. Art. 4 AI Act. / Role-based training, AI-tool register and evidence pack for EU SMEs.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Cpath d='M18 33l9 9 19-20' fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-body{font-family:system-ui,sans-serif;margin:0;color:#1b1f24;line-height:1.55}
-.w{max-width:960px;margin:auto;padding:0 20px}header{background:#0f3d5e;color:#fff;padding:48px 0}
-h1{font-size:2rem;margin:.2em 0}.lang{float:right}.lang button{background:#fff2;color:#fff;border:1px solid #fff6;padding:4px 10px;cursor:pointer}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:24px 0}
-.card{border:1px solid #d7dde3;border-radius:10px;padding:18px}.price{font-size:1.6rem;font-weight:700}
-a.cta{display:inline-block;text-decoration:none}
-.cta{background:#f2a541;color:#111;padding:12px 20px;border:0;border-radius:8px;font-weight:700;cursor:pointer}
-form label{display:block;margin:10px 0 4px}input,select{width:100%;padding:9px;box-sizing:border-box}
-small,.note{color:#555;font-size:.85rem}footer{border-top:1px solid #ddd;margin-top:40px;padding:20px 0}
-[data-l="en"]{display:none}body.en [data-l="es"]{display:none}body.en [data-l="en"]{display:revert}
+:root{--ink:#0f172a;--mut:#475569;--line:#e2e8f0;--bg:#f8fafc;--pri:#4f46e5;--pri2:#4338ca;--acc:#0ea5e9;--soft:#eef2ff;--r:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;background:#fff}
+a{color:var(--pri)}.w{max-width:1140px;margin:auto;padding:0 24px}
+[data-l="en"]{display:none!important}body.en [data-l="es"]{display:none!important}body.en [data-l="en"]{display:revert}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--ink);text-decoration:none;letter-spacing:-.02em}
+.logo i{width:30px;height:30px;border-radius:8px;background:var(--pri);display:grid;place-items:center}
+.links{display:flex;gap:26px;align-items:center}.links a{color:var(--mut);text-decoration:none;font-size:.93rem;font-weight:500}.links a:hover{color:var(--ink)}
+.tog{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px}
+.tog button{border:0;background:none;font:600 .8rem Inter,sans-serif;padding:5px 11px;border-radius:999px;cursor:pointer;color:var(--mut)}
+.tog button.on{background:var(--ink);color:#fff}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.95rem;padding:12px 20px;border-radius:10px;text-decoration:none;border:1px solid transparent;transition:transform .15s,box-shadow .15s,background .15s;cursor:pointer}
+.btn.p{background:var(--pri);color:#fff;box-shadow:0 6px 18px -6px rgba(79,70,229,.6)}.btn.p:hover{background:var(--pri2);transform:translateY(-1px)}
+.btn.s{background:#fff;color:var(--ink);border-color:var(--line)}.btn.s:hover{border-color:#cbd5e1;transform:translateY(-1px)}
+.btn.sm{padding:8px 14px;font-size:.88rem}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:72px 0 40px;background:radial-gradient(900px 420px at 85% -10%,#e0e7ff 0,transparent 60%),radial-gradient(700px 380px at -10% 10%,#e0f2fe 0,transparent 55%)}
+.hero .w{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.pill{display:inline-flex;gap:8px;align-items:center;font-size:.82rem;font-weight:600;color:var(--pri2);background:var(--soft);border:1px solid #c7d2fe;padding:6px 12px;border-radius:999px}
+.pill b{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px #dcfce7}
+h1{font-size:clamp(2.1rem,4.4vw,3.35rem);line-height:1.08;letter-spacing:-.035em;margin:18px 0 18px;font-weight:800}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--pri),var(--acc));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:1.15rem;color:var(--mut);max-width:560px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 22px}
+.trust{display:flex;gap:20px;flex-wrap:wrap;color:var(--mut);font-size:.88rem}.trust span{display:flex;gap:6px;align-items:center}
+/* mockup */
+.mock{position:relative;margin-bottom:90px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:0 30px 60px -25px rgba(15,23,42,.25),0 1px 2px rgba(15,23,42,.05)}
+.reg{padding:20px}.reg h4{margin:0 0 4px;font-size:.95rem}.reg small{color:var(--mut)}
+.bar{display:flex;gap:6px;margin-bottom:14px}.bar i{width:10px;height:10px;border-radius:50%;background:#e2e8f0}
+table{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:12px}
+th{text-align:left;color:var(--mut);font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;padding:8px 6px;border-bottom:1px solid var(--line)}
+td{padding:10px 6px;border-bottom:1px solid #f1f5f9}
+.tag{font-size:.72rem;font-weight:600;padding:3px 8px;border-radius:999px}.ok{background:#dcfce7;color:#166534}.pe{background:#fef3c7;color:#92400e}
+.prog{height:6px;background:#f1f5f9;border-radius:9px;overflow:hidden;margin-top:14px}.prog i{display:block;height:100%;width:78%;background:linear-gradient(90deg,var(--pri),var(--acc));animation:grow 1.6s ease-out}
+.cert{position:absolute;right:-24px;bottom:-120px;width:240px;padding:16px 18px;transform:rotate(2deg);animation:float 6s ease-in-out infinite}
+.cert .seal{width:38px;height:38px;border-radius:50%;background:var(--soft);display:grid;place-items:center;float:right}
+.cert p{margin:2px 0;font-size:.78rem;color:var(--mut)}.cert strong{font-size:.92rem}
+.line{height:7px;border-radius:5px;background:#f1f5f9;margin:8px 0}
+/* sections */
+section{padding:88px 0}.alt{background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.eyebrow{color:var(--pri);font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em}
+h2{font-size:clamp(1.6rem,3vw,2.3rem);letter-spacing:-.03em;line-height:1.15;margin:8px 0 14px}
+.sub{color:var(--mut);max-width:640px;font-size:1.05rem}
+.law{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.law .card{padding:22px;box-shadow:none}.law b{display:block;font-size:1.3rem;letter-spacing:-.02em;margin-bottom:6px}.law p{margin:0;color:var(--mut);font-size:.93rem}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.step{padding:28px;box-shadow:none;transition:transform .2s,box-shadow .2s}.step:hover{transform:translateY(-4px);box-shadow:0 20px 40px -24px rgba(15,23,42,.25)}
+.ico{width:46px;height:46px;border-radius:12px;background:var(--soft);display:grid;place-items:center;margin-bottom:16px}
+.step h3{margin:0 0 6px;font-size:1.1rem}.step p{margin:0;color:var(--mut);font-size:.95rem}
+.num{float:right;color:#cbd5e1;font-weight:800;font-size:1.4rem}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:36px}
+.rc{display:flex;gap:18px;padding:26px;align-items:flex-start;box-shadow:none;background:linear-gradient(180deg,#fff,#fafbff)}
+.rc h3{margin:0 0 4px;font-size:1.08rem}.rc p{margin:0 0 14px;color:var(--mut);font-size:.93rem}
+.free{font-size:.72rem;font-weight:700;color:#166534;background:#dcfce7;padding:3px 9px;border-radius:999px;margin-left:6px;vertical-align:middle}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px;align-items:stretch}
+.plan{padding:30px;box-shadow:none;display:flex;flex-direction:column;position:relative}
+.plan h3{margin:0;font-size:1.05rem}.plan .who{color:var(--mut);font-size:.9rem;margin:2px 0 18px}
+.plan .old{color:#94a3b8;text-decoration:line-through;font-weight:500}.plan .pr{font-size:2.5rem;font-weight:800;letter-spacing:-.03em}
+.plan .per{color:var(--mut);font-size:.85rem}
+.plan ul{list-style:none;padding:0;margin:20px 0 26px;flex:1}.plan li{padding:6px 0 6px 26px;position:relative;font-size:.93rem}
+.plan li:before{content:"";position:absolute;left:0;top:11px;width:16px;height:16px;border-radius:50%;background:var(--soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='%234f46e5' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.plan .btn{justify-content:center}
+.feat{border:2px solid var(--pri);box-shadow:0 30px 60px -30px rgba(79,70,229,.45);transform:translateY(-8px)}
+.badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--pri);color:#fff;font-size:.75rem;font-weight:700;padding:5px 12px;border-radius:999px;white-space:nowrap}
+.note{color:var(--mut);font-size:.88rem;text-align:center;margin-top:26px}
+.wl{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}
+.formbox{padding:28px;min-height:420px;min-width:0}
+.formbox iframe{display:block;width:100%!important;min-width:100%;border:0}
+.wl>*{min-width:0}
+.fallback{font-size:.88rem;color:var(--mut);margin-top:10px}
+details{border:1px solid var(--line);border-radius:12px;padding:0 20px;margin-bottom:12px;background:#fff;transition:box-shadow .2s}
+details[open]{box-shadow:0 12px 30px -20px rgba(15,23,42,.3)}
+summary{cursor:pointer;list-style:none;font-weight:600;padding:18px 0;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}summary:after{content:"+";color:var(--pri);font-size:1.3rem;line-height:1;transition:transform .2s}
+details[open] summary:after{transform:rotate(45deg)}details p{margin:0 0 18px;color:var(--mut)}
+.faq{max-width:820px;margin:36px auto 0}
+footer{background:var(--ink);color:#cbd5e1;padding:56px 0 34px;font-size:.9rem}
+footer .w>div:first-child{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+footer a{color:#e2e8f0;text-decoration:none}footer a:hover{text-decoration:underline}
+footer h5{color:#fff;margin:0 0 12px;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em}
+footer ul{list-style:none;margin:0;padding:0}footer li{margin:6px 0}
+.legal{border-top:1px solid #1e293b;margin-top:38px;padding-top:22px;color:#94a3b8;font-size:.82rem}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}.reveal.in{opacity:1;transform:none}
+@keyframes float{50%{transform:rotate(2deg) translateY(-8px)}}@keyframes grow{from{width:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+@media (max-width:900px){.hero .w,.wl{grid-template-columns:1fr}.links a{display:none}.law,.steps,.plans{grid-template-columns:1fr}.res{grid-template-columns:1fr}
+.feat{transform:none}.mock{margin-bottom:0}.cert{position:relative;right:auto;bottom:auto;margin:-30px 0 0 auto;width:230px}footer .w>div:first-child{grid-template-columns:1fr}.hero{padding:56px 0 64px}section{padding:64px 0}}
+@media (max-width:420px){.w{padding:0 18px}.ctas .btn{width:100%;justify-content:center}nav .btn{display:none}.reg table th:nth-child(3),.reg table td:nth-child(3){display:none}}
 </style></head>
 <body>
-<header><div class="w">
-<div class="lang"><button onclick="setL('es')">ES</button> <button onclick="setL('en')">EN</button></div>
-<p data-l="es">Para pymes de la UE cuyo equipo usa ChatGPT, Copilot u otras IA</p>
-<p data-l="en">For EU SMEs whose staff use ChatGPT, Copilot or other AI tools</p>
-<h1 data-l="es">Cumple con la alfabetización en IA del art. 4 del AI Act en una tarde, no en un trimestre</h1>
-<h1 data-l="en">Handle AI Act Article 4 AI literacy in an afternoon, not a quarter</h1>
-<p data-l="es">Formación breve por rol, registro de herramientas de IA y un pack de evidencias listo para enseñar si te lo piden. Autoservicio y multiidioma.</p>
-<p data-l="en">Short role-based training, an AI-tool register and an evidence pack ready to show if anyone asks. Self-serve and multilingual.</p>
-<a href="#waitlist"><button class="cta" data-l="es">Únete a la lista de espera</button><button class="cta" data-l="en">Join the waitlist</button></a>
-</div></header>
-<main class="w">
-<h2 data-l="es">Lo que dice la norma (sin alarmismo)</h2><h2 data-l="en">What the law says (no scaremongering)</h2>
-<p data-l="es">Desde el 2-2-2025, quien usa sistemas de IA debe adoptar medidas para apoyar la alfabetización en IA de su personal. Tras el Reglamento (UE) 2026/1744 no se exige garantizar un nivel concreto ni ningún certificado, pero sí actuar y poder demostrarlo; las autoridades nacionales supervisan desde agosto de 2026. <a href="https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers">FAQ de la Comisión Europea</a>.</p>
-<p data-l="en">Since 2 Feb 2025, organisations using AI systems must take measures to support their staff's AI literacy. After Regulation (EU) 2026/1744 no specific level or certificate is required, but you need to act and be able to show it; national authorities supervise from August 2026. <a href="https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers">European Commission FAQ</a>.</p>
-<div class="grid">
-<div class="card"><h3 data-l="es">1. Formación por rol</h3><h3 data-l="en">1. Role-based training</h3><p data-l="es">Módulos cortos para dirección, RR. HH., ventas, atención al cliente y equipos técnicos, con quiz.</p><p data-l="en">Short modules for management, HR, sales, support and technical staff, with a quiz.</p></div>
-<div class="card"><h3 data-l="es">2. Registro de herramientas IA</h3><h3 data-l="en">2. AI-tool register</h3><p data-l="es">Inventario de qué IA se usa, quién, para qué y con qué datos.</p><p data-l="en">Inventory of which AI is used, by whom, for what and with which data.</p></div>
-<div class="card"><h3 data-l="es">3. Pack de evidencias</h3><h3 data-l="en">3. Evidence pack</h3><p data-l="es">Registro de formaciones, política de uso y constancias de finalización exportables.</p><p data-l="en">Training log, acceptable-use policy and exportable completion records.</p></div>
+<nav><div class="w">
+<a class="logo" href="#"><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i>AI Literacy Kit</a>
+<div class="links">
+<a href="#how"><span data-l="es">Cómo funciona</span><span data-l="en">How it works</span></a>
+<a href="#resources"><span data-l="es">Recursos</span><span data-l="en">Resources</span></a>
+<a href="#pricing"><span data-l="es">Precios</span><span data-l="en">Pricing</span></a>
+<a href="#faq">FAQ</a>
+<div class="tog"><button id="b-es" onclick="setL('es')">ES</button><button id="b-en" onclick="setL('en')">EN</button></div>
+<a class="btn p sm" href="#waitlist"><span data-l="es">Lista de espera</span><span data-l="en">Waitlist</span></a>
+</div></div></nav>
+
+<header class="hero"><div class="w">
+<div class="reveal">
+<span class="pill"><b></b><span data-l="es">Para pymes de la UE cuyo equipo usa ChatGPT, Copilot u otras IA</span><span data-l="en">For EU SMEs whose staff use ChatGPT, Copilot or other AI tools</span></span>
+<h1><span data-l="es">Cumple con la alfabetización en IA del art. 4 del AI Act <em>en una tarde</em>, no en un trimestre</span><span data-l="en">Handle AI Act Article 4 AI literacy <em>in an afternoon</em>, not a quarter</span></h1>
+<p class="lead" data-l="es">Formación breve por rol, registro de herramientas de IA y un pack de evidencias listo para enseñar si te lo piden. Autoservicio y multiidioma.</p>
+<p class="lead" data-l="en">Short role-based training, an AI-tool register and an evidence pack ready to show if anyone asks. Self-serve and multilingual.</p>
+<div class="ctas">
+<a class="btn p" href="#waitlist"><span data-l="es">Únete a la lista de espera</span><span data-l="en">Join the waitlist</span> →</a>
+<a class="btn s" href="#resources"><span data-l="es">Recursos gratuitos</span><span data-l="en">Free resources</span></a>
 </div>
-<h2 data-l="es">Recursos gratuitos</h2><h2 data-l="en">Free resources</h2>
-<p><a href="checklist_art4.md" data-l="es">Checklist art. 4 (ES)</a><a href="checklist_art4.md" data-l="en">Article 4 checklist (ES, EN coming)</a> · <a href="plantilla_registro_herramientas_ia.csv" data-l="es">Plantilla de registro de herramientas IA (CSV)</a><a href="plantilla_registro_herramientas_ia.csv" data-l="en">AI-tool register template (CSV)</a></p>
-<h2 data-l="es">Precios de preventa por equipo (pago único, 12 meses de acceso)</h2><h2 data-l="en">Pre-sale team pricing (one-off, 12 months access)</h2>
-<div class="grid">
-<div class="card"><h3>Starter</h3><p data-l="es">Hasta 10 personas</p><p data-l="en">Up to 10 people</p><p class="price">149 €</p><small data-l="es">Preventa: 89 €</small><small data-l="en">Pre-sale: €89</small><p><a class="cta" href="https://tally.so/r/M1KJql" target="_blank" rel="noopener"><span data-l="es">Reservar preventa</span><span data-l="en">Reserve pre-sale</span></a></p></div>
-<div class="card"><h3>Team</h3><p data-l="es">Hasta 25 personas</p><p data-l="en">Up to 25 people</p><p class="price">299 €</p><small data-l="es">Preventa: 179 €</small><small data-l="en">Pre-sale: €179</small><p><a class="cta" href="https://tally.so/r/M1KJql" target="_blank" rel="noopener"><span data-l="es">Reservar preventa</span><span data-l="en">Reserve pre-sale</span></a></p></div>
-<div class="card"><h3>Business</h3><p data-l="es">Hasta 50 personas</p><p data-l="en">Up to 50 people</p><p class="price">499 €</p><small data-l="es">Preventa: 299 €</small><small data-l="en">Pre-sale: €299</small><p><a class="cta" href="https://tally.so/r/M1KJql" target="_blank" rel="noopener"><span data-l="es">Reservar preventa</span><span data-l="en">Reserve pre-sale</span></a></p></div>
+<div class="trust">
+<span>✓ <span data-l="es">Sin tarjeta</span><span data-l="en">No card needed</span></span>
+<span>✓ ES · EN · IT · FR · DE · PT</span>
+<span>✓ <span data-l="es">Basado en la FAQ oficial de la Comisión</span><span data-l="en">Based on the official Commission FAQ</span></span>
+</div></div>
+
+<div class="mock reveal" aria-hidden="true">
+<div class="card reg"><div class="bar"><i></i><i></i><i></i></div>
+<h4><span data-l="es">Registro de herramientas de IA</span><span data-l="en">AI-tool register</span></h4>
+<small><span data-l="es">Acme Logística S.L. · 18 personas</span><span data-l="en">Acme Logistics Ltd · 18 people</span></small>
+<table><tr><th><span data-l="es">Herramienta</span><span data-l="en">Tool</span></th><th><span data-l="es">Equipo</span><span data-l="en">Team</span></th><th><span data-l="es">Datos</span><span data-l="en">Data</span></th><th><span data-l="es">Formación</span><span data-l="en">Training</span></th></tr>
+<tr><td><b>ChatGPT</b></td><td>Marketing</td><td><span data-l="es">Internos</span><span data-l="en">Internal</span></td><td><span class="tag ok">✓ 6/6</span></td></tr>
+<tr><td><b>Copilot</b></td><td><span data-l="es">Ventas</span><span data-l="en">Sales</span></td><td>CRM</td><td><span class="tag ok">✓ 5/5</span></td></tr>
+<tr><td><b>DeepL</b></td><td><span data-l="es">Soporte</span><span data-l="en">Support</span></td><td><span data-l="es">Tickets</span><span data-l="en">Tickets</span></td><td><span class="tag pe">3/7</span></td></tr></table>
+<div class="prog"><i></i></div><small><span data-l="es">14 de 18 personas formadas · 78 %</span><span data-l="en">14 of 18 people trained · 78%</span></small>
+</div>
+<div class="card cert">
+<div class="seal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14l-1.5 7 5-3 5 3-1.5-7"/></svg></div>
+<p><span data-l="es">Constancia de formación interna</span><span data-l="en">Internal training record</span></p>
+<strong>Laura M. · <span data-l="es">Ventas</span><span data-l="en">Sales</span></strong>
+<div class="line" style="width:90%"></div><div class="line" style="width:70%"></div>
+<p><span data-l="es">Módulo IA en ventas · 42 min · quiz 9/10</span><span data-l="en">AI in sales module · 42 min · quiz 9/10</span></p>
+</div></div>
+</div></header>
+
+<section><div class="w reveal">
+<span class="eyebrow"><span data-l="es">Lo que dice la norma</span><span data-l="en">What the law says</span></span>
+<h2><span data-l="es">Lo que dice la norma (sin alarmismo)</span><span data-l="en">What the law says (no scaremongering)</span></h2>
+<p class="sub" data-l="es">Desde el 2-2-2025, quien usa sistemas de IA debe adoptar medidas para apoyar la alfabetización en IA de su personal. Tras el Reglamento (UE) 2026/1744 no se exige garantizar un nivel concreto ni ningún certificado, pero sí actuar y poder demostrarlo; las autoridades nacionales supervisan desde agosto de 2026. <a href="https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers">FAQ de la Comisión Europea</a>.</p>
+<p class="sub" data-l="en">Since 2 Feb 2025, organisations using AI systems must take measures to support their staff's AI literacy. After Regulation (EU) 2026/1744 no specific level or certificate is required, but you need to act and be able to show it; national authorities supervise from August 2026. <a href="https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers">European Commission FAQ</a>.</p>
+<div class="law">
+<div class="card"><b>2-2-2025</b><p data-l="es">El art. 4 se aplica a proveedores y usuarios de IA.</p><p data-l="en">Art. 4 applies to AI providers and deployers.</p></div>
+<div class="card"><b>27-7-2026</b><p data-l="es">El Reglamento (UE) 2026/1744 lo reformula: medidas proporcionadas, sin nivel mínimo por persona.</p><p data-l="en">Regulation (EU) 2026/1744 rewords it: proportionate measures, no minimum level per person.</p></div>
+<div class="card"><b><span data-l="es">Agosto 2026</span><span data-l="en">August 2026</span></b><p data-l="es">Supervisión por las autoridades nacionales. Basta un registro interno de lo que hiciste.</p><p data-l="en">National authorities supervise. An internal record of what you did is enough.</p></div>
+</div></div></section>
+
+<section id="how" class="alt"><div class="w reveal">
+<span class="eyebrow"><span data-l="es">Cómo funciona</span><span data-l="en">How it works</span></span>
+<h2><span data-l="es">Tres pasos, una tarde</span><span data-l="en">Three steps, one afternoon</span></h2>
+<div class="steps">
+<div class="card step"><span class="num">01</span><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+<h3><span data-l="es">Registro de herramientas IA</span><span data-l="en">AI-tool register</span></h3><p data-l="es">Inventario de qué IA se usa, quién, para qué y con qué datos.</p><p data-l="en">Inventory of which AI is used, by whom, for what and with which data.</p></div>
+<div class="card step"><span class="num">02</span><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.4 3.4-5.5 6.5-5.5s5.7 2.1 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 010 7M18.5 14.8c1.6.8 2.7 2.6 3 5.2"/></svg></div>
+<h3><span data-l="es">Formación por rol</span><span data-l="en">Role-based training</span></h3><p data-l="es">Módulos cortos para dirección, RR. HH., ventas, atención al cliente y equipos técnicos, con quiz.</p><p data-l="en">Short modules for management, HR, sales, support and technical staff, with a quiz.</p></div>
+<div class="card step"><span class="num">03</span><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-4.5"/></svg></div>
+<h3><span data-l="es">Pack de evidencias</span><span data-l="en">Evidence pack</span></h3><p data-l="es">Registro de formaciones, política de uso y constancias de finalización exportables.</p><p data-l="en">Training log, acceptable-use policy and exportable completion records.</p></div>
+</div></div></section>
+
+<section id="resources"><div class="w reveal">
+<span class="eyebrow"><span data-l="es">Gratis, sin registro</span><span data-l="en">Free, no sign-up</span></span>
+<h2><span data-l="es">Recursos gratuitos</span><span data-l="en">Free resources</span></h2>
+<p class="sub" data-l="es">Empieza hoy mismo con nuestra checklist y la plantilla de registro.</p><p class="sub" data-l="en">Start today with our checklist and register template.</p>
+<div class="res">
+<div class="card rc"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l2 2 4-4"/><rect x="4" y="3" width="16" height="18" rx="2"/></svg></div>
+<div><h3><span data-l="es">Checklist art. 4 (ES)</span><span data-l="en">Article 4 checklist (ES, EN coming)</span><span class="free">FREE</span></h3>
+<p data-l="es">Inventario, rol y riesgo, medidas, política y evidencias, con fuentes oficiales.</p><p data-l="en">Inventory, role and risk, measures, policy and evidence, with official sources.</p>
+<a class="btn s sm" href="checklist_art4.md"><span data-l="es">Abrir checklist</span><span data-l="en">Open checklist</span> ↓</a></div></div>
+<div class="card rc"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg></div>
+<div><h3><span data-l="es">Plantilla de registro de herramientas IA (CSV)</span><span data-l="en">AI-tool register template (CSV)</span><span class="free">FREE</span></h3>
+<p data-l="es">Ábrela en Excel o Google Sheets y rellena una fila por herramienta.</p><p data-l="en">Open it in Excel or Google Sheets and add one row per tool.</p>
+<a class="btn s sm" href="plantilla_registro_herramientas_ia.csv" download><span data-l="es">Descargar CSV</span><span data-l="en">Download CSV</span> ↓</a></div></div>
+</div></div></section>
+
+<section id="pricing" class="alt"><div class="w reveal">
+<div style="text-align:center"><span class="eyebrow"><span data-l="es">Preventa</span><span data-l="en">Pre-sale</span></span>
+<h2><span data-l="es">Precios de preventa por equipo (pago único, 12 meses de acceso)</span><span data-l="en">Pre-sale team pricing (one-off, 12 months access)</span></h2></div>
+<div class="plans">
+<div class="card plan"><h3>Starter</h3><p class="who"><span data-l="es">Hasta 10 personas</span><span data-l="en">Up to 10 people</span></p>
+<div><span class="old">149 €</span></div><div class="pr">89 €</div><span class="per"><span data-l="es">precio de preventa</span><span data-l="en">pre-sale price</span></span>
+<ul><li data-l="es">Formación por rol + quiz</li><li data-l="en">Role-based training + quiz</li><li data-l="es">Registro de herramientas IA</li><li data-l="en">AI-tool register</li><li data-l="es">Pack de evidencias exportable</li><li data-l="en">Exportable evidence pack</li></ul>
+<a class="btn s" href="https://tally.so/r/M1KJql" target="_blank" rel="noopener"><span data-l="es">Reservar preventa</span><span data-l="en">Reserve pre-sale</span></a></div>
+<div class="card plan feat"><span class="badge"><span data-l="es">Más elegido</span><span data-l="en">Most popular</span></span><h3>Team</h3><p class="who"><span data-l="es">Hasta 25 personas</span><span data-l="en">Up to 25 people</span></p>
+<div><span class="old">299 €</span></div><div class="pr">179 €</div><span class="per"><span data-l="es">precio de preventa</span><span data-l="en">pre-sale price</span></span>
+<ul><li data-l="es">Todo lo de Starter</li><li data-l="en">Everything in Starter</li><li data-l="es">Módulos para todos los roles</li><li data-l="en">Modules for every role</li><li data-l="es">Plantilla de política de uso de IA</li><li data-l="en">AI acceptable-use policy template</li></ul>
+<a class="btn p" href="https://tally.so/r/M1KJql" target="_blank" rel="noopener"><span data-l="es">Reservar preventa</span><span data-l="en">Reserve pre-sale</span></a></div>
+<div class="card plan"><h3>Business</h3><p class="who"><span data-l="es">Hasta 50 personas</span><span data-l="en">Up to 50 people</span></p>
+<div><span class="old">499 €</span></div><div class="pr">299 €</div><span class="per"><span data-l="es">precio de preventa</span><span data-l="en">pre-sale price</span></span>
+<ul><li data-l="es">Todo lo de Team</li><li data-l="en">Everything in Team</li><li data-l="es">Varios idiomas en el mismo equipo</li><li data-l="en">Multiple languages in one team</li><li data-l="es">Exportación para auditoría interna</li><li data-l="en">Export for internal audit</li></ul>
+<a class="btn s" href="https://tally.so/r/M1KJql" target="_blank" rel="noopener"><span data-l="es">Reservar preventa</span><span data-l="en">Reserve pre-sale</span></a></div>
 </div>
 <p class="note" data-l="es">Precios sin IVA. Ahora no se cobra nada: apuntarte solo reserva el precio de preventa.</p>
 <p class="note" data-l="en">Prices exclude VAT. Nothing is charged now: signing up only reserves the pre-sale price.</p>
-<h2 id="waitlist" data-l="es">Lista de espera</h2><h2 data-l="en">Waitlist</h2>
-<p data-l="es">Elige tu pack en el formulario. Ahora no se cobra nada.</p><p data-l="en">Pick your pack in the form. Nothing is charged now.</p>
+</div></section>
+
+<section id="waitlist"><div class="w wl reveal">
+<div><span class="eyebrow"><span data-l="es">Lista de espera</span><span data-l="en">Waitlist</span></span>
+<h2><span data-l="es">Reserva tu precio de preventa</span><span data-l="en">Reserve your pre-sale price</span></h2>
+<p class="sub" data-l="es">Déjanos tu email e indica si te interesa la preventa. Ahora no se cobra nada.</p><p class="sub" data-l="en">Leave your email and tell us if you want the pre-sale. Nothing is charged now.</p>
+<p class="fallback"><span data-l="es">¿No ves el formulario? </span><span data-l="en">Can't see the form? </span><a href="https://tally.so/r/M1KJql" target="_blank" rel="noopener">tally.so/r/M1KJql</a></p></div>
+<div class="card formbox">
 <iframe data-tally-src="https://tally.so/embed/M1KJql?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="Waitlist / Lista de espera"></iframe>
-<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
 <noscript><p><a href="https://tally.so/r/M1KJql">Abrir el formulario / Open the form</a></p></noscript>
-<p class="note"><span data-l="es">¿No ves el formulario? </span><span data-l="en">Can't see the form? </span><a href="https://tally.so/r/M1KJql" target="_blank" rel="noopener">tally.so/r/M1KJql</a></p>
-</main>
-<footer class="w"><small data-l="es">Información general, no asesoramiento jurídico. No garantizamos el cumplimiento normativo. Responsable de los datos: fv30vazquez@gmail.com. Usaremos tu email solo para esta lista y puedes pedir su borrado.</small>
-<small data-l="en">General information, not legal advice. We do not guarantee regulatory compliance. Data controller: fv30vazquez@gmail.com. We only use your email for this list and you can ask us to delete it.</small></footer>
-<script>function setL(l){document.body.className=l==='en'?'en':'';document.documentElement.lang=l}
-if((navigator.language||'').slice(0,2)!=='es')setL('en');</script>
+</div></div></section>
+
+<section id="faq" class="alt"><div class="w reveal">
+<div style="text-align:center"><span class="eyebrow">FAQ</span><h2><span data-l="es">Preguntas frecuentes</span><span data-l="en">Frequently asked questions</span></h2></div>
+<div class="faq">
+<details><summary><span data-l="es">¿Es obligatorio un certificado de IA?</span><span data-l="en">Is an AI certificate mandatory?</span></summary>
+<p data-l="es">No. La FAQ de la Comisión Europea indica que no hace falta un certificado; basta con un registro interno de las formaciones y otras medidas. Nuestras constancias son evidencia interna, no un certificado oficial.</p>
+<p data-l="en">No. The European Commission FAQ says no certificate is needed; an internal record of trainings and other measures is enough. Our completion records are internal evidence, not an official certificate.</p></details>
+<details><summary><span data-l="es">¿Me afecta si mi equipo solo usa ChatGPT?</span><span data-l="en">Does it apply if my team only uses ChatGPT?</span></summary>
+<p data-l="es">Sí. Según la Comisión, una empresa cuyo personal usa ChatGPT, por ejemplo para redactar o traducir, debe informarle de riesgos concretos como las alucinaciones.</p>
+<p data-l="en">Yes. According to the Commission, a company whose staff use ChatGPT, e.g. for writing or translating, should inform them of specific risks such as hallucination.</p></details>
+<details><summary><span data-l="es">¿Qué cambió con el Reglamento (UE) 2026/1744?</span><span data-l="en">What changed with Regulation (EU) 2026/1744?</span></summary>
+<p data-l="es">El art. 4 ahora exige adoptar medidas para apoyar la alfabetización en IA, sin garantizar un nivel concreto por persona. La obligación sigue existiendo.</p>
+<p data-l="en">Article 4 now requires taking measures to support AI literacy, without guaranteeing a specific level for each person. The obligation still exists.</p></details>
+<details><summary><span data-l="es">¿Se cobra algo al apuntarme?</span><span data-l="en">Am I charged when I sign up?</span></summary>
+<p data-l="es">No. Apuntarte solo reserva el precio de preventa; te escribiremos antes del lanzamiento.</p>
+<p data-l="en">No. Signing up only reserves the pre-sale price; we'll email you before launch.</p></details>
+<details><summary><span data-l="es">¿Garantiza el cumplimiento normativo?</span><span data-l="en">Does it guarantee compliance?</span></summary>
+<p data-l="es">No. Es información general y una herramienta de apoyo, no asesoramiento jurídico. Para usos de alto riesgo, consulta a un profesional.</p>
+<p data-l="en">No. It is general information and a support tool, not legal advice. For high-risk uses, consult a professional.</p></details>
+</div></div></section>
+
+<footer><div class="w"><div>
+<div><a class="logo" href="#" style="color:#fff"><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i>AI Literacy Kit</a>
+<p data-l="es">Alfabetización en IA para pymes de la UE, sin complicaciones.</p><p data-l="en">AI literacy for EU SMEs, without the hassle.</p></div>
+<div><h5><span data-l="es">Producto</span><span data-l="en">Product</span></h5><ul>
+<li><a href="#how"><span data-l="es">Cómo funciona</span><span data-l="en">How it works</span></a></li><li><a href="#pricing"><span data-l="es">Precios</span><span data-l="en">Pricing</span></a></li><li><a href="https://tally.so/r/M1KJql" target="_blank" rel="noopener"><span data-l="es">Lista de espera</span><span data-l="en">Waitlist</span></a></li></ul></div>
+<div><h5><span data-l="es">Recursos</span><span data-l="en">Resources</span></h5><ul>
+<li><a href="checklist_art4.md">Checklist art. 4</a></li><li><a href="plantilla_registro_herramientas_ia.csv" download><span data-l="es">Plantilla CSV</span><span data-l="en">CSV template</span></a></li><li><a href="https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers"><span data-l="es">FAQ de la Comisión</span><span data-l="en">Commission FAQ</span></a></li></ul></div>
+</div>
+<div class="legal"><span data-l="es">Información general, no asesoramiento jurídico. No garantizamos el cumplimiento normativo. Responsable de los datos: <a href="mailto:fv30vazquez@gmail.com">fv30vazquez@gmail.com</a>. Usaremos tu email solo para esta lista y puedes pedir su borrado.</span>
+<span data-l="en">General information, not legal advice. We do not guarantee regulatory compliance. Data controller: <a href="mailto:fv30vazquez@gmail.com">fv30vazquez@gmail.com</a>. We only use your email for this list and you can ask us to delete it.</span></div>
+</div></footer>
+
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+<script>
+function setL(l){document.body.className=l==='en'?'en':'';document.documentElement.lang=l;
+document.getElementById('b-es').className=l==='es'?'on':'';document.getElementById('b-en').className=l==='en'?'on':''}
+setL(new URLSearchParams(location.search).get('lang')||((navigator.language||'').slice(0,2)==='es'?'es':'en'));
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
 </body></html>
