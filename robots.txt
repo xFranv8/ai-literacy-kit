@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xfranv8.github.io/ai-literacy-kit/sitemap.xml
